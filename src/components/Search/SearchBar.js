@@ -10,7 +10,8 @@ class SearchBar extends React.Component {
 
         this.state = {
             search: '',
-            searched: false
+            searched: false,
+            isListSelected: true
         }
     }
 
@@ -34,6 +35,19 @@ class SearchBar extends React.Component {
         this.props.resetSearch()
     }
 
+    showList = () => {
+        this.setState({
+            isListSelected: true
+        })
+        this.context.router.history.push('/')
+    }
+
+    showMap = () => {
+        this.setState({
+            isListSelected: false
+        })
+        this.context.router.history.push('/map/')
+    }
 
     render() {
         const mapButtonClasses = this.state.isListSelected ? 'map-button red' : 'map-button white'
@@ -78,6 +92,10 @@ PropTypes.PropTypes = {
     setShrink: PropTypes.func.isRequired,
     resetSearch: PropTypes.func.isRequired,
 
+}
+
+SearchBar.contextTypes = {
+    router: PropTypes.object
 }
 
 export default SearchBar

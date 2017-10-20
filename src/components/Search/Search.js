@@ -38,9 +38,11 @@ class Search extends React.Component {
         )
     }
 }
+
 Search.propTypes = {
     logoSizeIsSmall: PropTypes.bool.isRequired,
     updateSearchTerm: PropTypes.func.isRequired,
     resetSearch: PropTypes.func.isRequired,
 }
+
 export default Search
