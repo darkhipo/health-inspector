@@ -14,12 +14,18 @@ class App extends React.Component {
 
         this.state = {
             searched: false,
+<<<<<<< HEAD
             loading: false,
             results: [],
+=======
+            results: [],
+            loading: false,
+>>>>>>> cc322d3f9ca0062e81d2f01142b17d205ff2f750
         }
     }
 
     updateSearchTerm = (searchTerm) => {
+<<<<<<< HEAD
         if(searchTerm.length === 0){
             return 0
         } else {
@@ -27,6 +33,13 @@ class App extends React.Component {
             //console.log(`We are searching for ${searchTerm}`)
             this.getSearchData(searchTerm).then((data) => {
                 //console.log(data)
+=======
+        if (searchTerm.length === 0) {
+            return null
+        } else {
+            this.setState({loading: true})
+            this.getSearchData(searchTerm).then((data) => {
+>>>>>>> cc322d3f9ca0062e81d2f01142b17d205ff2f750
                 this.setState({
                     searched: true,
                     loading: false,
@@ -72,6 +85,7 @@ class App extends React.Component {
                         resetSearch={this.resetSearch}
                         changeFilter={this.changeFilter}
                         filter={this.state.filter} />
+<<<<<<< HEAD
                     <Route exact path="/" render={ () => (
                         <ResultsList
                             loading={this.state.loading}
@@ -82,6 +96,18 @@ class App extends React.Component {
                     <Route path="/map/" render={ () => (
                         <h1>Map</h1>
                     ) } />
+=======
+                    <Route exact path="/" render={() => (
+                        <ResultsList
+                           loading={this.state.loading}
+                           results={this.state.results}
+                           searched={this.state.searched}
+                        />
+                    )} />
+                    <Route path="/map/" render={() => (
+                        <h1>Map</h1>
+                    )} />
+>>>>>>> cc322d3f9ca0062e81d2f01142b17d205ff2f750
                 </div>
             </Router>
         )

@@ -48,6 +48,10 @@ class SearchBar extends React.Component {
         })
         this.context.router.history.push('/map/')
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> cc322d3f9ca0062e81d2f01142b17d205ff2f750
 
     render() {
         const mapButtonClasses = this.state.isListSelected ? 'map-button red' : 'map-button white'
@@ -98,4 +102,8 @@ SearchBar.contextTypes = {
     router: PropTypes.object
 }
 
+<<<<<<< HEAD
 export default SearchBar
+=======
+export default SearchBar
+>>>>>>> cc322d3f9ca0062e81d2f01142b17d205ff2f750
